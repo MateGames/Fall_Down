@@ -134,11 +134,6 @@ class game_state():
             pygame.draw.rect(screen,GREEN,button5,4)
         else:
             pygame.draw.rect(screen,BLACK,button5,4)
-        if mapp.done[4]:
-            pygame.draw.rect(screen,GREEN,button6,4)
-        else:
-            pygame.draw.rect(screen,BLACK,button6,4)
-
         
         text = self.font.render('<-', True, BLACK)
         screen.blit(text, (110,self.row1+5))
@@ -155,8 +150,6 @@ class game_state():
         text = self.font.render('4', True, BLACK)
         screen.blit(text, (520,self.row1+5))
 
-        text = self.font.render('5', True, BLACK)
-        screen.blit(text, (620,self.row1+5))
     
 
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -233,7 +226,7 @@ class game_state():
 
         character.jumps()
 
-
+    
 class block():
     def __init__(self,lvl,size):
         self.lvl = lvl
@@ -309,6 +302,40 @@ class block():
                 self.m1 = pygame.Rect(250,520,40,20)
                 mine_r.x = 250; mine_r.y = 520; screen.blit(mine,mine_r)
     
+
+            case 3:
+                self.reset()
+                self.b0 = pygame.Rect(160,420,180,40)
+                self.b1 = pygame.Rect(400,340,180,40)
+                self.b2 = pygame.Rect(500,260,180,40)
+                self.b3 = pygame.Rect(280,150,180,40)
+                platform_r.y = 420; platform_r.x = 160; screen.blit(platform,platform_r)
+                platform_r.y = 340; platform_r.x = 400; screen.blit(platform,platform_r)
+                platform_r.y = 260; platform_r.x = 500; screen.blit(platform,platform_r)
+                platform_r.y = 150; platform_r.x = 280; screen.blit(platform,platform_r)
+
+
+                self.m1 = pygame.Rect(300,400,40,20)
+                mine_r.x = 300; mine_r.y = 400; screen.blit(mine,mine_r)
+
+
+            case 4:
+                self.reset()
+                self.b0 = pygame.Rect(160,420,180,40)
+                self.b1 = pygame.Rect(400,340,180,40)
+                self.b2 = pygame.Rect(500,260,180,40)
+                self.b3 = pygame.Rect(280,150,180,40)
+                platform_r.y = 420; platform_r.x = 160; screen.blit(platform,platform_r)
+                platform_r.y = 340; platform_r.x = 400; screen.blit(platform,platform_r)
+                platform_r.y = 260; platform_r.x = 500; screen.blit(platform,platform_r)
+                platform_r.y = 150; platform_r.x = 280; screen.blit(platform,platform_r)
+
+
+                self.m1 = pygame.Rect(300,400,40,20)
+                self.m0 = pygame.Rect(520,240,40,20)
+                mine_r.x = 300; mine_r.y = 400; screen.blit(mine,mine_r)
+                mine_r.x = 520; mine_r.y = 240; screen.blit(mine,mine_r)
+
 
     def reset(self):
         self.b0 = pygame.Rect(0,-100,180,40)
